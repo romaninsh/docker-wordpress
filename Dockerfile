@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Romans <me@nearly.guru>
 
-# This dockerfile is suitable for installing Wordpress 
+# This dockerfile is suitable for installing Wordpress
 # installation. The script will also look for /data volume
 # in anticipation of an existing wordpress install. If it's
 # found, then it will analyse it's contents and will
@@ -22,9 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
         php5-ldap \
         php5-gd \
         php5-curl \
-        php-pear &&
-
-    rm -rf /var/lib/apt/lists/*
+        php-pear && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/cli/php.ini
