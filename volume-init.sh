@@ -2,12 +2,17 @@
 
 test -d /data/ || { echo "No data volume found. Skipping."; exit; }
 
+mkdir -p /data/wp-content/
+
 # Grab wp-content if it's found (plugins etc)
-if [ -d /data/wp-content/ ]; then
-  echo "Linking wp-content.."
-  rm -rf /app/wp-content
-  ln -sf /data/wp-content /app/wp-content
+if [ ! -d /data/wp-content/ ]; then
+  echo "Moving wp-content to blank volume.."
+  cp -aR /app/wp-content/ /data/
 fi
+
+echo "Linking wp-content.."
+rm -rf /app/wp-content
+ln -sf /data/wp-content /app/wp-content
 
 # Grab custom config file if it's there
 if [ -f /data/wp-config-production.php ]; then
