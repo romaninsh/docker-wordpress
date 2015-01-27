@@ -2,8 +2,6 @@
 
 test -d /data/ || { echo "No data volume found. Skipping."; exit; }
 
-mkdir -p /data/wp-content/
-
 # Grab wp-content if it's found (plugins etc)
 if [ ! -d /data/wp-content/ ]; then
   echo "Moving wp-content to blank volume.."
