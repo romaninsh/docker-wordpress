@@ -32,6 +32,7 @@ RUN a2enmod headers
 
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
+RUN echo "cache-bust"
 
 # Install vanilla wordpress
 ADD https://wordpress.org/latest.tar.gz /wordpress.tar.gz
