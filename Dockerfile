@@ -39,10 +39,11 @@ RUN tar xvzf /wordpress.tar.gz
 RUN cp -aR /wordpress/* /app
 RUN chown -R www-data:www-data /app
 
-# Use our c
+# Use our default config
 ADD wp-config.php /app/wp-config.php
 
 # Initialize custom config from volume
+ADD volume-init.sh /volume-init.php
 RUN chmod 755 /volume-init.sh
 
 # Configure and start apache
