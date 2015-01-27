@@ -48,6 +48,7 @@ RUN chmod 755 /volume-init.sh
 
 # Configure and start apache
 ADD vhost.conf /etc/apache2/sites-enabled/000-default.conf
+ADD run.sh /run.sh
 
 EXPOSE 80
 WORKDIR /app
