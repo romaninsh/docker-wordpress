@@ -11,6 +11,8 @@ define('DB_NAME',$matches[9]);
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', ''     );
 
+define('FS_METHOD', 'direct');
+
 #define('WP_HOME','http://usblog.triumph.com');
 #define('WP_SITEURL','http://usblog.triumph.com');
 
