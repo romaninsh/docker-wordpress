@@ -43,7 +43,7 @@ RUN chown -R www-data:www-data /app
 ADD wp-config.php /app/wp-config.php
 
 # Initialize custom config from volume
-ADD volume-init.sh /volume-init.php
+ADD volume-init.sh /volume-init.sh
 RUN chmod 755 /volume-init.sh
 
 # Configure and start apache
