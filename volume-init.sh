@@ -18,13 +18,13 @@ fi
 
 # Grab .htaccess if it's there
 if [ -f /data/.htaccess ]; then
-  echo "Using .htaccess"
+  echo "Using .htaccess.."
   ln -sf /data/.htaccess /app/.htaccess
 fi
 
 # Execute init.sh if it's found
 if [ -x /data/init.sh ]; then
-  echo "Executing custom init.sh"
+  echo "Executing custom init.sh.."
   /data/init.sh
 fi
 
