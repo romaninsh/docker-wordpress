@@ -1,3 +1,5 @@
+<?php
+
 $dsn=$_ENV['DATABASE_URL'];
 preg_match( '|([a-z0-9]+)://([^:]*)(:(.*))?@([A-Za-z0-9\.-]*)(:([0-9]*))?(/([0-9a-zA-Z_/\.-]*))|', $dsn, $matches);
 
