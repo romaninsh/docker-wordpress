@@ -36,8 +36,8 @@ RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 # Install vanilla wordpress
 ADD https://wordpress.org/latest.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz
-RUN mv /wordpress/* /app
-RUN chown -R www-data:www-data /var/www/
+RUN cp -aR /wordpress/* /app
+RUN chown -R www-data:www-data /app
 
 # Use our c
 ADD wp-config.php /app/wp-config.php
