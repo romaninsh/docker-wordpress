@@ -25,6 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
         php-pear && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
+RUN sed -i "s/upload_max_filesize.*/upload_max_filesize = 20M/g" /etc/php5/apache2/php.ini
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/cli/php.ini
 
 RUN a2enmod rewrite
