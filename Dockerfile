@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:15.04
 MAINTAINER Romans <me@nearly.guru>
 
 # This dockerfile is suitable for installing Wordpress
