@@ -37,10 +37,10 @@ RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 ADD https://wordpress.org/latest.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz
 RUN cp -aR /wordpress/* /app
-RUN chown -R www-data:www-data /app
 
 # Use our default config
 ADD wp-config.php /app/wp-config.php
+RUN chown -R www-data:www-data /app
 
 # Initialize custom config from volume
 ADD volume-init.sh /volume-init.sh
