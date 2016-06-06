@@ -50,6 +50,8 @@ RUN chmod 755 /volume-init.sh
 ADD vhost.conf /etc/apache2/sites-enabled/000-default.conf
 ADD run.sh /run.sh
 
+ADD nginx.conf.sigil /app
+
 EXPOSE 80
 WORKDIR /app
 CMD ["/run.sh"]
