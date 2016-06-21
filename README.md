@@ -42,8 +42,8 @@ your site, because a new container is created every time. To make those
 files persistent, you'll need to set up a volume.
 
 ```
-dokku volume:create wordpress /data
-dokku volume:link wordpress wordpress
+dokku docker-options:add wordpress build,deploy,run "-v /home/dokku/wordpress/data:/data"
+dokku deploy wordpress
 ```
 
 Because the volume we created was empty, `volume-init.sh` will automatically
@@ -63,21 +63,9 @@ Linking wp-content..
 
 ## 4. Adding your own themes and plugins
 
-You can access docker containers from host operating system. Type:
-
-```
-ls -l /var/lib/docker/vfs/dir/
-```
-
-and look for recently created folder. Create symlink to access it easy
-
-```
-ln -s /var/lib/docker/vfs/dir/<your-id-here> wordpress
-```
-
-Inside you'll find wp-content folder which you can customise. In my installations
-it's often linked with it's own repository. Make sure you back up this volume
-as it would contain your uploaded files.
+Your `wp-content` should now be accessible at `/home/dokku/wordpress/data/wp-content`,
+which you can customise. In my installations it's often linked with it's own repository. 
+Make sure you back up this volume as it would contain your uploaded files.
 
 ## 5. Advanced Use
 
