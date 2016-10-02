@@ -13,8 +13,8 @@ define( 'DB_COLLATE', ''     );
 
 define('FS_METHOD', 'direct');
 
-define('WP_HOME','https://zachmccormick.me');
-define('WP_SITEURL','https://zachmccormick.me');
+#define('WP_HOME','http://usblog.triumph.com');
+#define('WP_SITEURL','http://usblog.triumph.com');
 
 /** SSL */  
 define('FORCE_SSL_ADMIN', true);  
