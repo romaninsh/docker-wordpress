@@ -16,6 +16,13 @@ define('FS_METHOD', 'direct');
 #define('WP_HOME','http://usblog.triumph.com');
 #define('WP_SITEURL','http://usblog.triumph.com');
 
+/** SSL */  
+define('FORCE_SSL_ADMIN', true);  
+// in some setups HTTP_X_FORWARDED_PROTO might contain  
+// a comma-separated list e.g. http,https  
+// so check for https existence  
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)  
+    $_SERVER['HTTPS']='on';
 
 $table_prefix  = 'wp_';
 
